@@ -3,62 +3,696 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Domiqo - Smart Home. Simple Life.</title>
+
+<title>Domiqo | Your Home, Organised</title>
+
+<meta
+name="description"
+content="Domiqo helps families organise home documents, inventory, maintenance, warranties, expenses, pet health records and emergency information in one place."
+>
+
 <style>
-body{
-font-family:Arial,sans-serif;
-background:#f5f7fa;
-margin:0;
-text-align:center;
-padding:60px;
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
 }
-h1{
-color:#2563EB;
-font-size:48px;
-margin-bottom:10px;
+
+html {
+scroll-behavior: smooth;
 }
-h2{
-color:#333;
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+background: #f5f7fb;
+color: #172033;
+line-height: 1.6;
 }
-p{
-font-size:20px;
-color:#555;
-max-width:700px;
-margin:auto;
-line-height:1.6;
+
+a {
+text-decoration: none;
 }
-.button{
-display:inline-block;
-margin-top:35px;
-padding:15px 30px;
-background:#2563EB;
-color:white;
-text-decoration:none;
-border-radius:8px;
-font-size:20px;
+
+.container {
+width: min(1120px, 90%);
+margin: auto;
 }
-footer{
-margin-top:80px;
-color:#777;
-font-size:14px;
+
+header {
+background: #ffffff;
+border-bottom: 1px solid #e7ebf3;
+position: sticky;
+top: 0;
+z-index: 100;
+}
+
+nav {
+min-height: 72px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 20px;
+}
+
+.brand {
+font-size: 27px;
+font-weight: 800;
+color: #2455d6;
+letter-spacing: 1px;
+}
+
+.nav-links {
+display: flex;
+gap: 22px;
+align-items: center;
+flex-wrap: wrap;
+}
+
+.nav-links a {
+color: #4c566a;
+font-size: 15px;
+font-weight: 600;
+}
+
+.nav-links a:hover {
+color: #2455d6;
+}
+
+.hero {
+padding: 95px 0 85px;
+background:
+linear-gradient(
+135deg,
+#eef3ff 0%,
+#ffffff 55%,
+#f2f7ff 100%
+);
+}
+
+.hero-grid {
+display: grid;
+grid-template-columns: 1.15fr 0.85fr;
+gap: 55px;
+align-items: center;
+}
+
+.eyebrow {
+display: inline-block;
+background: #e6edff;
+color: #2455d6;
+border-radius: 30px;
+padding: 8px 14px;
+font-size: 14px;
+font-weight: 700;
+margin-bottom: 20px;
+}
+
+h1 {
+font-size: clamp(42px, 6vw, 68px);
+line-height: 1.05;
+color: #172033;
+margin-bottom: 22px;
+}
+
+.hero h1 span {
+color: #2455d6;
+}
+
+.hero-text {
+max-width: 680px;
+color: #667085;
+font-size: 19px;
+margin-bottom: 30px;
+}
+
+.buttons {
+display: flex;
+gap: 14px;
+flex-wrap: wrap;
+}
+
+.primary-button,
+.secondary-button {
+display: inline-block;
+padding: 14px 22px;
+border-radius: 12px;
+font-weight: 700;
+}
+
+.primary-button {
+background: #2455d6;
+color: #ffffff;
+}
+
+.secondary-button {
+border: 1px solid #ccd6ee;
+background: #ffffff;
+color: #2455d6;
+}
+
+.hero-card {
+background: #ffffff;
+padding: 30px;
+border-radius: 26px;
+box-shadow: 0 20px 60px rgba(38, 67, 130, 0.14);
+}
+
+.hero-card h3 {
+font-size: 24px;
+margin-bottom: 18px;
+}
+
+.hero-list {
+display: grid;
+gap: 12px;
+}
+
+.hero-list div {
+background: #f6f8fd;
+border-radius: 14px;
+padding: 13px 15px;
+font-weight: 600;
+color: #45516a;
+}
+
+section {
+padding: 80px 0;
+}
+
+.section-heading {
+text-align: center;
+max-width: 760px;
+margin: 0 auto 45px;
+}
+
+.section-heading h2 {
+font-size: 38px;
+margin-bottom: 12px;
+}
+
+.section-heading p {
+color: #6b7280;
+font-size: 17px;
+}
+
+.features {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+}
+
+.feature {
+background: #ffffff;
+border: 1px solid #e7ebf3;
+border-radius: 20px;
+padding: 25px;
+transition: 0.2s ease;
+}
+
+.feature:hover {
+transform: translateY(-4px);
+box-shadow: 0 12px 30px rgba(30, 55, 100, 0.08);
+}
+
+.feature-icon {
+width: 48px;
+height: 48px;
+display: grid;
+place-items: center;
+background: #e9efff;
+border-radius: 14px;
+margin-bottom: 18px;
+font-size: 23px;
+}
+
+.feature h3 {
+margin-bottom: 8px;
+font-size: 20px;
+}
+
+.feature p {
+color: #6b7280;
+font-size: 15px;
+}
+
+.pet-section {
+background: #172033;
+color: #ffffff;
+}
+
+.pet-content {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 55px;
+align-items: center;
+}
+
+.pet-content h2 {
+font-size: 40px;
+margin-bottom: 18px;
+}
+
+.pet-content p {
+color: #cbd5e1;
+font-size: 17px;
+margin-bottom: 20px;
+}
+
+.passport-card {
+background: #ffffff;
+color: #172033;
+border-radius: 24px;
+padding: 28px;
+}
+
+.passport-card .passport-title {
+color: #2455d6;
+font-size: 14px;
+font-weight: 800;
+margin-bottom: 12px;
+}
+
+.passport-card h3 {
+font-size: 26px;
+margin-bottom: 16px;
+}
+
+.passport-row {
+padding: 12px 0;
+border-bottom: 1px solid #edf0f5;
+color: #5d6678;
+}
+
+.about {
+text-align: center;
+}
+
+.about-box {
+background: #ffffff;
+border: 1px solid #e7ebf3;
+border-radius: 24px;
+padding: 38px;
+max-width: 850px;
+margin: auto;
+}
+
+.about-box h2 {
+font-size: 34px;
+margin-bottom: 14px;
+}
+
+.about-box p {
+color: #6b7280;
+margin-bottom: 10px;
+}
+
+.contact {
+background: #eaf0ff;
+text-align: center;
+}
+
+.contact h2 {
+font-size: 34px;
+margin-bottom: 12px;
+}
+
+.contact p {
+color: #667085;
+margin-bottom: 25px;
+}
+
+footer {
+background: #101827;
+color: #b7c0cf;
+padding: 35px 0;
+}
+
+.footer-content {
+display: flex;
+justify-content: space-between;
+gap: 20px;
+align-items: center;
+flex-wrap: wrap;
+}
+
+.footer-brand {
+color: #ffffff;
+font-weight: 800;
+font-size: 20px;
+}
+
+.footer-links {
+display: flex;
+gap: 20px;
+flex-wrap: wrap;
+}
+
+.footer-links a {
+color: #b7c0cf;
+}
+
+@media (max-width: 850px) {
+.hero-grid,
+.pet-content {
+grid-template-columns: 1fr;
+}
+
+.features {
+grid-template-columns: 1fr 1fr;
+}
+
+.nav-links {
+display: none;
+}
+}
+
+@media (max-width: 560px) {
+.features {
+grid-template-columns: 1fr;
+}
+
+.hero {
+padding: 65px 0;
+}
+
+section {
+padding: 60px 0;
+}
+
+.section-heading h2,
+.pet-content h2 {
+font-size: 31px;
+}
 }
 </style>
 </head>
 
 <body>
 
-<h1>DOMIQO</h1>
+<header>
+<div class="container">
+<nav>
+<div class="brand">DOMIQO</div>
 
-<h2>Smart Home. Simple Life.</h2>
+<div class="nav-links">
+<a href="#features">Features</a>
+<a href="#pet-passport">Pet Passport</a>
+<a href="#about">About</a>
+<a href="#contact">Support</a>
+</div>
+</nav>
+</div>
+</header>
 
-<p>
-Domiqo is building the next generation smart home platform that helps families monitor, control and protect their homes with intelligent automation and AI-powered technology.
+<main>
+
+<section class="hero">
+<div class="container hero-grid">
+
+<div>
+<div class="eyebrow">
+One place for your home
+</div>
+
+<h1>
+Your home.
+<br>
+<span>Organised.</span>
+</h1>
+
+<p class="hero-text">
+Domiqo helps families keep important home
+information together — from documents and
+warranties to maintenance, expenses,
+emergency information and pet health records.
 </p>
 
-<a class="button" href="mailto:hello@domiqo.co.uk">Contact Us</a>
+<div class="buttons">
+<a
+class="primary-button"
+href="#features"
+>
+Explore Domiqo
+</a>
+
+<a
+class="secondary-button"
+href="mailto:hello@domiqo.co.uk"
+>
+Contact Us
+</a>
+</div>
+</div>
+
+<div class="hero-card">
+<h3>Everything that matters at home</h3>
+
+<div class="hero-list">
+<div>📄 Document Vault</div>
+<div>📦 Home Inventory</div>
+<div>🛠️ Maintenance Tracking</div>
+<div>🛡️ Warranty Tracker</div>
+<div>🐾 Pet Health Passport</div>
+<div>🚨 Emergency Home & QR</div>
+</div>
+</div>
+
+</div>
+</section>
+
+
+<section id="features">
+<div class="container">
+
+<div class="section-heading">
+<h2>Built for everyday family life</h2>
+<p>
+Keep essential home information organised,
+accessible and easier to manage.
+</p>
+</div>
+
+<div class="features">
+
+<article class="feature">
+<div class="feature-icon">📄</div>
+<h3>Document Vault</h3>
+<p>
+Keep important household documents,
+bills, manuals and warranties organised.
+</p>
+</article>
+
+<article class="feature">
+<div class="feature-icon">📦</div>
+<h3>Home Inventory</h3>
+<p>
+Record household items and keep useful
+product information together.
+</p>
+</article>
+
+<article class="feature">
+<div class="feature-icon">🛠️</div>
+<h3>Home Maintenance</h3>
+<p>
+Track maintenance tasks, due dates
+and reminders around your home.
+</p>
+</article>
+
+<article class="feature">
+<div class="feature-icon">🛡️</div>
+<h3>Warranty Tracker</h3>
+<p>
+Save warranty dates, receipt photos
+and expiry reminders.
+</p>
+</article>
+
+<article class="feature">
+<div class="feature-icon">🛒</div>
+<h3>Shopping List</h3>
+<p>
+Create, complete and share shopping
+lists with less hassle.
+</p>
+</article>
+
+<article class="feature">
+<div class="feature-icon">£</div>
+<h3>Home Expenses</h3>
+<p>
+Record household spending, categories
+and recurring expenses.
+</p>
+</article>
+
+<article class="feature">
+<div class="feature-icon">🚨</div>
+<h3>Emergency Home</h3>
+<p>
+Save key emergency locations, contact
+details, photos and QR information.
+</p>
+</article>
+
+<article class="feature">
+<div class="feature-icon">👨‍👩‍👧‍👦</div>
+<h3>Family Sharing</h3>
+<p>
+Keep useful household information
+accessible to your family.
+</p>
+</article>
+
+<article class="feature">
+<div class="feature-icon">📱</div>
+<h3>QR Tools</h3>
+<p>
+Use Domiqo QR codes to reach selected
+information quickly when needed.
+</p>
+</article>
+
+</div>
+</div>
+</section>
+
+
+<section
+class="pet-section"
+id="pet-passport"
+>
+<div class="container pet-content">
+
+<div>
+<div class="eyebrow">
+Domiqo Pet Health Passport
+</div>
+
+<h2>
+Your pet's important health information
+in one place.
+</h2>
+
+<p>
+Keep pet details, vaccination records,
+medical history, allergies, food information,
+vet details and reminders organised together.
+</p>
+
+<p>
+Domiqo's digital pet passport also supports
+convenient QR access to selected passport
+information.
+</p>
+</div>
+
+<div class="passport-card">
+<div class="passport-title">
+DIGITAL PET HEALTH PASSPORT
+</div>
+
+<h3>Pet profile at a glance</h3>
+
+<div class="passport-row">
+🐾 Pet information
+</div>
+
+<div class="passport-row">
+💉 Vaccination records
+</div>
+
+<div class="passport-row">
+🩺 Medical & surgical history
+</div>
+
+<div class="passport-row">
+⚠️ Allergy records
+</div>
+
+<div class="passport-row">
+🥣 Food & diet
+</div>
+
+<div class="passport-row">
+📅 Health reminders
+</div>
+</div>
+
+</div>
+</section>
+
+
+<section
+class="about"
+id="about"
+>
+<div class="container">
+
+<div class="about-box">
+<h2>About Domiqo</h2>
+
+<p>
+Domiqo is a home and family organisation
+platform developed by Jerick Technologies Ltd.
+</p>
+
+<p>
+Our goal is simple: make important household
+information easier to organise, find and manage.
+</p>
+</div>
+
+</div>
+</section>
+
+
+<section
+class="contact"
+id="contact"
+>
+<div class="container">
+
+<h2>Need help with Domiqo?</h2>
+
+<p>
+Questions, support requests or feedback are welcome.
+</p>
+
+<a
+class="primary-button"
+href="mailto:hello@domiqo.co.uk"
+>
+hello@domiqo.co.uk
+</a>
+
+</div>
+</section>
+
+</main>
+
 
 <footer>
-© 2026 Jerick Technologies Ltd. All Rights Reserved.
+<div class="container footer-content">
+
+<div>
+<div class="footer-brand">DOMIQO</div>
+<div>
+© 2026 Jerick Technologies Ltd.
+All rights reserved.
+</div>
+</div>
+
+<div class="footer-links">
+<a href="#contact">Support</a>
+<a href="mailto:hello@domiqo.co.uk">
+Contact
+</a>
+</div>
+
+</div>
 </footer>
 
 </body>
